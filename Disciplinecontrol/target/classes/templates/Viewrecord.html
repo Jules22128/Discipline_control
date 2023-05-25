@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+body {
+  background-image: 
+url("/.images.jpg");
+}
+
+</style>
+</head>
+<body>
+
+<h1>View Form</h1>
+
+<table id="customers">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Sex</th>
+    <th>Classes</th>
+    <th>Province</th>
+    <th>Pnumber</th>
+    <th>Profile Picture</th>
+    <th>Edit</th>
+                <th>Delete</th>
+  </tr>
+  <tbody>
+            <tr th:each="alluser: ${displayAll}">
+                <td th:text="${alluser.fname}"/>
+                <td th:text="${alluser.lname}"/>
+                <td th:text="${alluser.sex}"/>
+                <td th:text="${alluser.classes}"/>
+                <td th:text="${alluser.province}"/>
+                <td th:text="${alluser.pnumber}"/>
+                <td th:text="${alluser.profilepicture}"/>
+                <td><a th:href="@{/edit/{id}(id=${alluser.id})}">Edit</a></td>
+                <td><a th:href="@{/delete/{id}(id=${alluser.id})}">Delete</a></td>
+
+            </tr>
+            </tbody>
+ 
+</table>
+
+</body>
+</html>
+
+
+

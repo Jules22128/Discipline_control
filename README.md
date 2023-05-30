@@ -1,0 +1,3 @@
+# Discipline_control
+this is Project which can use to control discipline of high school student
+first is sign-in and login first then go to work place to do other staffs like registration, view records and so on....
